@@ -1,7 +1,2 @@
 [build]
-  command = "npm run build"   # The command to build your project
-  publish = "dist"            # Directory to publish (e.g., Vite outputs files here)
-  environment = { NODE_VERSION = "20.0.0" } # Node.js version to use
-
-[dev]
-  framework = "react"         # Optional: Framework being used
+  environment = { NODE_VERSION = "20.0.0" }
