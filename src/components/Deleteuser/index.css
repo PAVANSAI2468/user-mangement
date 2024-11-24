@@ -1,0 +1,84 @@
+/* General Styling */
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Deleteuser Container */
+.delete-container {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  margin: 10px;
+}
+
+/* Heading Styling */
+.delete-container h1 {
+  font-size: 1.8rem;
+  color: #ff4b5c;
+  margin-bottom: 20px;
+}
+
+/* Button Styling */
+.delete-container button {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.3s ease;
+}
+
+.delete-container button:first-child {
+  background: #ff4b5c; /* Delete Button - Red */
+}
+
+.delete-container button:last-child {
+  background: #28a745; /* Cancel Button - Green */
+}
+
+.delete-container button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .delete-container {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .delete-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .delete-container button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .delete-container h1 {
+    font-size: 1.2rem;
+  }
+
+  .delete-container button {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+}
