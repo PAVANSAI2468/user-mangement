@@ -1,46 +1,76 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
-const Adduser = () => {
+const Adduser = ({ users, setData }) => {
+  const navigate = useNavigate();
+  const { id } = useParams();
+  console.log(users);
   const [inputData, setInputData] = useState({
-    FirstName: "",
-    LastName: "",
-    Email: "",
-    Phone: "",
+    name: "",
+    email: "",
+    phone: "",
   });
+
+  useEffect(() => {
+    if (id) {
+      const user = users.find((user) => user.id === parseInt(id));
+      if (user) {
+        setInputData({
+          name: user.name || "",
+          email: user.email || "",
+          phone: user.phone || "",
+        });
+      }
+    }
+  }, [id, users]);
 
   const handleForm = (e) => {
     e.preventDefault();
-    console.log(inputData);
+    if (id) {
+      setData(
+        users.map((user) =>
+          user.id === parseInt(id) ? { ...user, ...inputData } : user
+        )
+      );
+    } else {
+      setData([...users, { id: users.length + 1, ...inputData }]);
+    }
+    navigate("/");
   };
 
   const handleInputData = (e) => {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
   };
+
   return (
     <div>
       <form onSubmit={handleForm}>
-        <label htmlFor="firstname">FirstName</label>
+        <label htmlFor="name">Name</label>
         <input
           type="text"
-          id="firstname"
-          name="FirstName"
-          onChange={handleInputData}
-        />
-        <br />
-        <label htmlFor="lastname">LastName</label>
-        <input
-          type="text"
-          id="lastname"
-          name="LastName"
+          id="name"
+          name="name"
+          value={inputData.name}
           onChange={handleInputData}
         />
         <br />
         <label htmlFor="email">Email</label>
-        <input type="text" id="email" name="Email" onChange={handleInputData} />
+        <input
+          type="text"
+          id="email"
+          name="email"
+          value={inputData.email}
+          onChange={handleInputData}
+        />
         <br />
         <label htmlFor="phone">Phone</label>
-        <input type="text" id="phone" name="Phone" onChange={handleInputData} />
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          value={inputData.phone}
+          onChange={handleInputData}
+        />
         <br />
         <button type="submit">Submit</button>
       </form>

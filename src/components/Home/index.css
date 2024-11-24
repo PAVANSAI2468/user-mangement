@@ -1,0 +1,141 @@
+/* General Styling */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #89f7fe, #66a6ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* Home Container */
+.home-container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
+}
+
+/* Heading */
+.home-container h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+/* Add User Button */
+.home-container .add-user-btn {
+  display: block;
+  margin: 0 auto 20px auto;
+  background: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.home-container .add-user-btn:hover {
+  background: #218838;
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+table thead {
+  background-color: #007bff;
+  color: white;
+}
+
+table thead th {
+  padding: 10px;
+  text-align: left;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tbody td {
+  padding: 10px;
+  text-align: left;
+}
+
+table tbody button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+table tbody button:hover {
+  background-color: #0056b3;
+}
+
+/* Horizontal Scrolling Wrapper */
+.table-wrapper {
+  overflow-x: auto; /* Add horizontal scrolling for the table */
+  width: 100%;
+}
+
+.table-wrapper table {
+  min-width: 800px; /* Ensure the table has a minimum width */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .home-container .add-user-btn {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  table thead th,
+  table tbody td {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  table tbody button {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container h1 {
+    font-size: 1.2rem;
+  }
+
+  .home-container .add-user-btn {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+}
